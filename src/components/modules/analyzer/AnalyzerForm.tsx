@@ -13,6 +13,7 @@ import {
   sampleInput, sampleReportSchema, type SampleReport,
 } from '@/lib/analysis';
 import AnalysisReport from './AnalysisReport';
+import AnalyzerNavbar from './AnalyzerNavbar';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 const frame = 'mx-auto max-w-[1184px] px-4 sm:px-8';
@@ -71,22 +72,7 @@ export default function AnalyzerForm() {
 
   return (
     <div className={`${inter.className} bg-[#F5F6F8] text-[#111827]`}>
-      <header className="border-b border-[#E3E6EB] bg-white">
-        <div className={`${frame} flex min-h-16 flex-wrap items-center justify-between gap-3 py-2`}>
-          <a href="#analyze" className="flex items-center gap-2.5 text-[15px] font-semibold">
-            <span className="grid size-8 place-items-center rounded-[9px] bg-[#4F46E5] text-white">
-              <Check size={18} strokeWidth={2.4} aria-hidden="true" />
-            </span>
-            Resume and JD Analyzer
-          </a>
-          <nav aria-label="Main" className="flex flex-wrap gap-6 text-sm font-medium text-[#374151]">
-            <a href="#how" className="hover:underline">How scoring works</a>
-            <span>Evaluation</span>
-            <span>History</span>
-            <a href="#privacy" className="hover:underline">Privacy</a>
-          </nav>
-        </div>
-      </header>
+      <AnalyzerNavbar fontClassName={inter.className} />
       <main id="analyze" className={`${frame} pb-[72px] ${report ? 'pt-8' : 'pt-10 sm:pt-14'}`}>
         {report ? (
           <AnalysisReport report={report} onEdit={() => setReport(null)} />
