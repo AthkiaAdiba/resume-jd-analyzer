@@ -20,16 +20,14 @@ const navItems = [
 ];
 
 
-export default function AnalyzerNavbar({
-  fontClassName,
-}: {
+export default function AnalyzerNavbar({}: {
   fontClassName: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="border-b border-[#E3E6EB] bg-white">
-      <div className="mx-auto flex min-h-16 max-w-[1184px] items-center justify-between gap-3 px-4 py-2 sm:px-8">
+      <div className="mx-auto flex min-h-16 max-w-296 items-center justify-between gap-3 px-4 py-2 sm:px-8">
         <a
           href="#analyze"
           className="flex min-w-0 items-center gap-2.5 text-[15px] font-semibold text-[#111827]"

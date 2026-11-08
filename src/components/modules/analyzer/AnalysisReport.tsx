@@ -36,7 +36,7 @@ export default function AnalysisReport({ report, onEdit }: AnalysisReportProps) 
         <div className="min-w-0 space-y-6">
           <Card className={card}>
             <div className="flex flex-wrap items-center gap-5 sm:gap-7">
-              <div className="grid size-[100px] shrink-0 place-items-center rounded-full p-2 sm:size-32" style={{ background: `conic-gradient(#4F46E5 ${report.estimatedScore}%, #E5E7EB 0)` }}>
+              <div className="grid size-25 shrink-0 place-items-center rounded-full p-2 sm:size-32" style={{ background: `conic-gradient(#4F46E5 ${report.estimatedScore}%, #E5E7EB 0)` }}>
                 <div className="grid size-full place-content-center rounded-full bg-white text-center">
                   <span className="text-4xl leading-none font-bold">{report.estimatedScore}</span>
                   <span className="mt-1 text-xs text-[#596273]">out of 100</span>
@@ -78,11 +78,11 @@ export default function AnalysisReport({ report, onEdit }: AnalysisReportProps) 
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <div className="rounded-xl bg-[#F5F6F8] p-3.5">
                     <p className="text-xs font-semibold text-[#596273]">The job asks for</p>
-                    <blockquote className="mt-1 text-sm break-words">{jobQuote}</blockquote>
+                    <blockquote className="mt-1 text-sm wrap-break-word">{jobQuote}</blockquote>
                   </div>
                   <div className={`rounded-xl p-3.5 ${cvQuote ? 'bg-[#F5F6F8]' : 'border border-dashed border-[#8A94A6]'}`}>
                     <p className="text-xs font-semibold text-[#596273]">The sample CV shows</p>
-                    {cvQuote ? <blockquote className="mt-1 text-sm break-words">{cvQuote}</blockquote> : <p className="mt-1 text-sm">No supporting evidence appears in the sample CV.</p>}
+                    {cvQuote ? <blockquote className="mt-1 text-sm wrap-break-word">{cvQuote}</blockquote> : <p className="mt-1 text-sm">No supporting evidence appears in the sample CV.</p>}
                   </div>
                 </div>
               </article>
